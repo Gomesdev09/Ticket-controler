@@ -21,11 +21,6 @@
                 <input type="number" id="horasTrabalho" min="0.1" step="0.1" placeholder="Ex: 8" value="8">
             </div>
             
-            <div class="input-group">
-                <label for="tempoPausa">Tempo da Pausa Leo (minutos):</label>
-                <input type="number" id="tempoPausa" min="0" placeholder="Ex: 60" value="80">
-            </div>
-            
             <div class="buttons">
                 <button class="btn-start" onclick="iniciar()">Iniciar</button>
             </div>
@@ -44,8 +39,6 @@
                     
                     <button class="btn-pause" id="btnPause" onclick="togglePausa()">PAUSA LEO</button>
                     
-                    <div class="pause-timer hidden" id="pauseTimer">00:00</div>
-                    
                     <div class="stats" style="grid-template-columns: 1fr; margin-top: 30px;">
                         <div class="stat-box">
                             <div class="info-label">Meta de horas</div>
@@ -55,22 +48,16 @@
                             <div class="info-label">Meta de tickets</div>
                             <div class="info-value" id="metaTicketsDisplay">--</div>
                         </div>
-                        <div class="stat-box">
-                            <div class="info-label">Tempo de pausa</div>
-                            <div class="info-value" id="pausaTotal">--</div>
-                        </div>
                     </div>
                 </div>
                 
                 <div class="right-section">
-                    <div class="dano-label">Tickets restantes</div>
-                    <div class="backlog-value" id="danoBacklog">    </div>
+                    <div class="dano-label">Tickets restantes:</div>
+                    <div class="backlog-value" id="danoBacklog"></div>
                     
                     <div class="atk-circle">
                         <button class="btn-complete" id="btnComplete" onclick="completarTicket()">ATACAR</button>
                     </div>
-                    
-                    
                     
                     <div class="stat-box" style="margin-top: 20px;">
                         <div class="info-label">Tickets Completos</div>
@@ -80,7 +67,6 @@
             </div>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
