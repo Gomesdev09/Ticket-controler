@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Tickets</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>⏱️ Controle do tempo</h1>
+        
+        <div id="setupForm">
+            <div class="input-group">
+                <label for="metaTickets">Meta de Tickets:</label>
+                <input type="number" id="metaTickets" min="1" placeholder="Ex: 50" value="130">
+            </div>
+            
+            <div class="input-group">
+                <label for="horasTrabalho">Horas de Trabalho:</label>
+                <input type="number" id="horasTrabalho" min="0.1" step="0.1" placeholder="Ex: 8" value="8">
+            </div>
+            
+            <div class="input-group">
+                <label for="tempoPausa">Tempo da Pausa Leo (minutos):</label>
+                <input type="number" id="tempoPausa" min="0" placeholder="Ex: 60" value="80">
+            </div>
+            
+            <div class="buttons">
+                <button class="btn-start" onclick="iniciar()">Iniciar</button>
+            </div>
+        </div>
+        
+        <div id="timerSection" class="hidden">
+            <div class="layout-grid">
+                <div class="left-section">
+                    <div class="info">
+                        <div class="info-label">Tempo por ticket:</div>
+                        <div class="info-value" id="tempoPorTicket">--</div>
+                    </div>
+                    
+                    <div class="section-title">Cronômetro</div>
+                    <div class="timer-display" id="cronometro">00:00</div>
+                    
+                    <button class="btn-pause" id="btnPause" onclick="togglePausa()">PAUSA LEO</button>
+                    
+                    <div class="pause-timer hidden" id="pauseTimer">00:00</div>
+                    
+                    <div class="stats" style="grid-template-columns: 1fr; margin-top: 30px;">
+                        <div class="stat-box">
+                            <div class="info-label">Meta de horas</div>
+                            <div class="info-value" id="metaHoras">--</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="info-label">Meta de tickets</div>
+                            <div class="info-value" id="metaTicketsDisplay">--</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="info-label">Tempo de pausa</div>
+                            <div class="info-value" id="pausaTotal">--</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="right-section">
+                    <div class="dano-label">Tickets restantes</div>
+                    <div class="backlog-value" id="danoBacklog">    </div>
+                    
+                    <div class="atk-circle">
+                        <button class="btn-complete" id="btnComplete" onclick="completarTicket()">ATACAR</button>
+                    </div>
+                    
+                    
+                    
+                    <div class="stat-box" style="margin-top: 20px;">
+                        <div class="info-label">Tickets Completos</div>
+                        <div class="info-value" id="ticketsCompletos">0</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
