@@ -144,3 +144,13 @@ function formatarTempo(segundos) {
     }
     return `${String(minutos).padStart(2, '0')}:${String(segs).padStart(2, '0')}`;
 }
+
+window.addEventListener('beforeunload', function (e) {
+    // Só mostra o aviso se o cronômetro estiver rodando
+    if (intervaloCronometro !== null) {
+        e.preventDefault();
+        e.returnValue = ''; // Necessário para alguns navegadores
+        return ''; // Necessário para navegadores mais antigos
+    }
+});
+
