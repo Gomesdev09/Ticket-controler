@@ -102,10 +102,10 @@ function completarTicket() {
         }
     }, 3000);
 
-    if (ticketsCompletos >= metaTickets) {
+    if (ticketsCompletos = metaTickets) {
         clearInterval(intervaloCronometro);
         alert('Parabéns! Você completou todos os tickets!');
-        btnComplete.disabled = true;
+        
     }
 }
 
@@ -153,4 +153,5 @@ window.addEventListener('beforeunload', function (e) {
         return ''; // Necessário para navegadores mais antigos
     }
 });
+
 
