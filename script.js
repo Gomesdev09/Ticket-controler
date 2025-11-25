@@ -102,7 +102,7 @@ function completarTicket() {
         }
     }, 3000);
 
-    if (ticketsCompletos = metaTickets) {
+    if (ticketsCompletos == metaTickets) {
         alert('Parabéns! Você completou todos os tickets!');
         
     }
@@ -152,6 +152,7 @@ window.addEventListener('beforeunload', function (e) {
         return ''; // Necessário para navegadores mais antigos
     }
 });
+
 
 
 
